@@ -280,8 +280,8 @@ static inline struct ps4_bridge *
 }
 
 void ps4_bridge_mode_set(struct drm_bridge *bridge,
-			 const struct drm_display_mode *mode,
-			 const struct drm_display_mode *adjusted_mode)
+			 /*const*/ struct drm_display_mode *mode,
+			 /*const*/ struct drm_display_mode *adjusted_mode)
 {
 	struct ps4_bridge *mn_bridge = bridge_to_ps4_bridge(bridge);
 
