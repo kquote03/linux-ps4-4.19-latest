@@ -1,0 +1,19 @@
+--- drivers/mmc/host/sdhci-pci-core.c
++++ drivers/mmc/host/sdhci-pci-core.c
+@@ -1417,9 +1469,16 @@ static const struct pci_device_id pci_ids[] = {
+ 	SDHCI_PCI_DEVICE(O2, SDS1,     o2),
+ 	SDHCI_PCI_DEVICE(O2, SEABIRD0, o2),
+ 	SDHCI_PCI_DEVICE(O2, SEABIRD1, o2),
++	//SDHCI_PCI_DEVICE(ARASAN, PHY_EMMC, arasan),
++#ifdef CONFIG_X86_PS4
++	SDHCI_PCI_DEVICE(SONY, AEOLIA_SDHCI, aeolia),
++	SDHCI_PCI_DEVICE(SONY, BELIZE_SDHCI, aeolia),
++	//SDHCI_PCI_DEVICE(SONY, BAIKAL_SDHCI, aeolia),
++#endif
+ 	SDHCI_PCI_DEVICE_CLASS(AMD, SYSTEM_SDHCI, PCI_CLASS_MASK, amd),
+ 	/* Generic SD host controller */
+ 	{PCI_DEVICE_CLASS(SYSTEM_SDHCI, PCI_CLASS_MASK)},
++
+ 	{ /* end: all zeroes */ },
+ };
+ 
