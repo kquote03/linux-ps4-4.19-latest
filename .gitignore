@@ -89,7 +89,7 @@ modules.builtin
 #
 # Generated include files
 #
-include/config
+#include/config
 include/generated
 include/ksym
 arch/*/include/generated
@@ -128,7 +128,7 @@ signing_key.x509
 x509.genkey
 
 # Kconfig presets
-all.config
+#all.config
 
 # Kdevelop4
 *.kdev4
