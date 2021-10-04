@@ -20,6 +20,7 @@ static const char hcd_name[] = "xhci_aeolia";
 
 static struct hc_driver __read_mostly xhci_aeolia_hc_driver;
 
+/*#define BELIZE_HACK*/
 #define NR_DEVICES 3
 
 struct aeolia_xhci {
@@ -61,7 +62,7 @@ static int xhci_aeolia_probe_one(struct pci_dev *dev, int index)
 	// ok...adding this printk appears to have introduced a delay that fixed
 	// bringup of the middle host controller, so w/e for now...
 	
-	printk("xhci_aeolia_probe_one %d, controller is %x\n", index, dev->device);
+	//printk("xhci_aeolia_probe_one %d, controller is %x\n", index, dev->device);
 
 	hcd = usb_create_hcd(driver, &dev->dev, pci_name(dev));
 	pci_set_drvdata(dev, axhci); /* usb_create_hcd clobbers this */

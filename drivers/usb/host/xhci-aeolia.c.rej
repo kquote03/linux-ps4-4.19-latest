@@ -1,0 +1,29 @@
+--- drivers/usb/host/xhci-aeolia.c
++++ drivers/usb/host/xhci-aeolia.c
+@@ -22,7 +22,7 @@ static struct hc_driver __read_mostly xhci_aeolia_hc_driver;
+ 
+ #define NR_DEVICES 3
+ // this affects aeolia too, it seems (see note in xhci_aeolia_probe_one)
+-#define BELIZE_HACK
++/* #define BELIZE_HACK */
+ 
+ struct aeolia_xhci {
+ 	int nr_irqs;
+@@ -42,7 +42,7 @@ static void xhci_aeolia_quirks(struct device *dev, struct xhci_hcd *xhci)
+ 	 * Do not try to enable MSIs, we provide the MSIs ourselves
+ 	 * Do not touch DMA mask, we need a custom one
+ 	 */
+-	xhci->quirks |= XHCI_PLAT | XHCI_HW_LPM_DISABLE;
++	xhci->quirks |= XHCI_PLAT | XHCI_PLAT_DMA;
+ }
+ 
+ /* called during probe() after chip reset completes */
+@@ -62,7 +62,7 @@ static int xhci_aeolia_probe_one(struct pci_dev *dev, int index)
+ 	
+ 	// ok...adding this printk appears to have introduced a delay that fixed
+ 	// bringup of the middle host controller, so w/e for now...
+-	printk("xhci_aeolia_probe_one %d\n", index);
++	//printk("xhci_aeolia_probe_one %d\n", index);
+ 
+ 	hcd = usb_create_hcd(driver, &dev->dev, pci_name(dev));
+ 	pci_set_drvdata(dev, axhci); /* usb_create_hcd clobbers this */
