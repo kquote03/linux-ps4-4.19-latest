@@ -90,7 +90,7 @@ modules.builtin
 # Generated include files
 #
 include/config
-include/generated
+#include/generated
 include/ksym
 arch/*/include/generated
 
