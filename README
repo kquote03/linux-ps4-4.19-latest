@@ -18,7 +18,9 @@ Please read the Documentation/process/changes.rst file, as it contains the
 requirements for building and running the kernel, and information about
 the problems which may result by upgrading your kernel.
 
-Special thanks to Fail0verflow team (for original kernel port), PS3ita team (for maintenance and patch updates), Mircoho (patch updates and Belize HDD fix) and any that I may have missed.
+Special thanks to Fail0verflow team (for original kernel port), PS3ita team
+(for maintenance and patch updates), Mircoho (patch updates and Belize HDD fix) 
+and any that I may have missed.
 
 https://github.com/fail0verflow/ps4-linux
 https://github.com/Ps3itaTeam/ps4-linux
